@@ -8,7 +8,7 @@ If you are already using ecosia.org, this script can make it easier to switch to
 How to use it?
 1. Install Tampermonkey https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=de
 2. Add a new user script
-3. Add the raw code of this script and hit "save"
+3. Add the raw code of the main.js script in this respository and hit "save"
 4. A button will appear in the top right corner when you are on the result page of an ecosia.org search
 5. Click the button to open a new tab in Chrome with the same search query you had chosen for Ecosia - only on Google
 6. Feedback welcome
