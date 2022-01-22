@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Ecosia -> Google redirect button
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Adds a button to Ecosia to repeat same search in Google (opens in new tab)
 // @author       Malte
 // @match        https://www.ecosia.org/search?q=*
@@ -9,6 +9,9 @@
 // @require      https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js
 // @require      https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js
 // ==/UserScript==
+
+//Change Log:
+// Added #g to search query
 
 (function() {
     'use strict';
@@ -23,15 +26,18 @@
 
     //create new clickable element
     var newNode = document.createElement('button');
-    newNode.innerText = "Open same search in Google";
+    newNode.innerText = "Open same search in Google :)";
     newNode.id = "inGoogle";
     newNode.style.fontSize = "13px";
     newNode.style.border = "orange";
 
     //get space to insert button
-    let navBar = document.getElementsByClassName("dropdown");
-    console.log("navBar", navBar);
-    navBar[0].after(newNode);
+    //let navBar = document.getElementsByClassName("dropdown");
+    //console.log("navBar", navBar);
+    //navBar[0].after(newNode);
+    let navBar2 = document.getElementsByClassName("search-form-field");
+    console.log("navBar2", navBar2);
+    navBar2[0].after(newNode);
 
     /*newNode.style.backgroundColor = "#3cccac";
       newNode.style.color = "#fff";
@@ -45,10 +51,16 @@
 
     //Adds tooltip to inGoogle-Button
     tippy('#inGoogle', {
-      content: "Click to search Google for the same keywords in a new tab",
+      content: "Click to search Google for the same keywords in a new tab :)",
     });
 
     newNode.onclick = function () {
-      window.open("https://www.google.com/search?q=" + searchParameter2[0])
+      let searchBar = document.getElementsByClassName("search-form-input");
+      console.log("searchBar", searchBar);
+      searchBar[0].value = searchBar[0].value + " " + "#g";
+      let searchButton = document.getElementsByClassName("search-form-button");
+      console.log("searchButton", searchButton);
+      searchButton[1].click();
+      //window.open("https://www.google.com/search?q=" + searchParameter2[0])
     }
 })();
