@@ -10,5 +10,5 @@ How to use it?
 2. Add a new user script
 3. Add the raw code of the main.js script in this respository and hit "save"
 4. A button will appear next to the search window on the result page of an ecosia.org search
-5. Click the button to switch to Chrome with the same search query you had chosen for Ecosia 
+5. Click the button to switch to Google with the same search query you had chosen for Ecosia 
 6. Feedback welcome
